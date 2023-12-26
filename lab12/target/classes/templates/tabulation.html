@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tabulation</title>
+  <link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}">
+  <link th:rel="stylesheet" type="text/css" th:href="styles.css">
+</head>
+
+<body>
+
+<form align="center">
+<h1 th:text="|Результат|" ></h1>
+
+  <label for="maxiY">Найбільше значення Y</label><br>
+  <input type="number" name="maxiY" id="maxiY" th:value="${maxiY}" disabled><br><br>
+
+  <label for="miniY">Найменше значення Y:</label><br>
+  <input type="number" name="miniY" th:value="${miniY}" id="miniY" disabled><br><br>
+
+  <label for="maxiX">Найбільше значення X</label><br>
+  <input type="number" name="maxiX" th:value="${maxiX}" id="maxiX" disabled><br><br>
+
+  <label for="miniX">Найменше значення X</label><br>
+  <input type="number" name="miniX" th:value="${miniX}" id="miniX" disabled><br><br>
+
+  <label for="suma">Сумма елементів</label><br>
+  <input type="number" name="suma" th:value="${suma}" id="suma" disabled><br><br>
+
+  <label for="arifmetic">Середнє арифметичне</label><br>
+  <input type="number" name="arifmetic" value="" th:value="${arifmetic}" id="arifmetic" disabled><br><br>
+
+</form>
+
+<table class="table table-sm table-striped">
+
+  <thead class="table-dark">
+  <tr><th>X</th><th>Y</th></tr>
+  </thead>
+
+  <tbody>
+  <tr th:each=" p : ${points}">
+    <td th:text="${p.x()}"></td>
+    <td th:text="${p.y()}"></td>
+  </tr>
+  </tbody>
+
+</table>
+
+<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
+</body>
+
+</html>

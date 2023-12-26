@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Tabulation</title>
+  <link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}">
+  <link th:rel="stylesheet" type="text/css" th:href="styles.css">
+</head>
+<body>
+
+<form align="center" action="tabulate" method="post">
+  <h1 th:text="|Введіть Числа|" ></h1>
+  <label class="myLable" for="start" th:text="|Start|" ></label><br>
+  <input type="text" id="start" name="start"><br/><br>
+
+  <label class="myLable" for="end" th:text="|End|" ></label><br>
+  <input type="text" id="end" name="end"><br/><br>
+
+  <label class="myLable" for="step" th:text="|Step|" ></label><br>
+  <input type="text" id="step" name="step"><br/><br>
+
+  <label class="myLable" for="a" th:text="|A|" ></label><br>
+  <input type="text" id="a" name="a"><br/><br>
+
+  <button type="submit" th:text="|Tabulate|" class="btn btn-primary"></button>
+</form>
+
+<script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
+</body>
+</html>
